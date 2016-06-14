@@ -31,10 +31,10 @@ Automobile.prototype.init = function(config) {
     .when('second', {allow: ['make-not-ready']})
     .when('third', {allow: ['make-not-ready']})
     .when('fourth', {allow: ['make-not-ready']})
-    .when('fith', {allow: ['make-not-ready']})
+    .when('fifth', {allow: ['make-not-ready']})
     .when('sixth', {allow: ['make-not-ready']})
     .when('seventh', {allow: ['make-not-ready']})
-    .when('eigth', {allow: ['make-not-ready']})
+    .when('eighth', {allow: ['make-not-ready']})
     .map('make-not-ready', this.makeNotReady)
     .map('make-ready', this.makeReady)
     .monitor('vehicleSpeed');
