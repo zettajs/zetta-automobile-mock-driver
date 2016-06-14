@@ -25,7 +25,8 @@ Automobile.prototype.init = function(config) {
   config
     .name(name)
     .type('automobile')
-    .state('first')
+    .state('not-ready')
+    .when('not-ready', {allow: ['make-ready']})
     .when('first', {allow: ['make-not-ready']})
     .when('second', {allow: ['make-not-ready']})
     .when('third', {allow: ['make-not-ready']})
@@ -34,23 +35,20 @@ Automobile.prototype.init = function(config) {
     .when('sixth', {allow: ['make-not-ready']})
     .when('seventh', {allow: ['make-not-ready']})
     .when('eigth', {allow: ['make-not-ready']})
-    .when('not-ready', {allow: ['make-ready']})
     .map('make-not-ready', this.makeNotReady)
     .map('make-ready', this.makeReady)
     .monitor('vehicleSpeed');
-
-  this._startMockData();
 };
 
 Automobile.prototype.makeReady = function(cb) {
   this.state = 'first';
-  this._startMockData();
+  this._startMockData(cb);
   cb();
 }
 
 Automobile.prototype.makeNotReady = function(cb) {
   this.state = 'not-ready'
-  this._stopMockData();
+  this._stopMockData(cb);
   cb();
 }
 
@@ -60,11 +58,13 @@ Automobile.prototype._startMockData = function(cb) {
     self.vehicleSpeed = (Math.sin(degToRad(self._vehicleSpeedCounter)) + 1.0) * self._vehicleSpeedHigh / 2;
     self.state = self._stateFromVehicleSpeed(self.vehicleSpeed);
     self._vehicleSpeedCounter += self._vehicleSpeedIncrement;
+    cb();
   }, 100);
 }
 
 Automobile.prototype._stopMockData = function(cb) {
   clearTimeout(this._vehicleSpeedTimeOut);
+  cb();
 }
 
 Automobile.prototype._stateFromVehicleSpeed = function(vehicleSpeed) {
