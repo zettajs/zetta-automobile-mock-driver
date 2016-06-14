@@ -1,7 +1,7 @@
 {
-  "name": "zetta-automobile-stateful-mock-driver",
+  "name": "zetta-automobile-mock-driver",
   "version": "0.0.1",
-  "description": "Mock stateful automobile device for Zetta that generates a sine wave.",
+  "description": "Mock automobile device for Zetta that generates a sine wave.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,12 +13,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zettajs/zetta-automobile-stateful-mock-driver.git"
+    "url": "https://github.com/zettajs/zetta-automobile-mock-driver.git"
   },
   "bugs": {
-    "url": "https://github.com/zettajs/zetta-automobile-stateful-mock-driver/issues"
+    "url": "https://github.com/zettajs/zetta-automobile-mock-driver/issues"
   },
-  "homepage": "https://github.com/zettajs/zetta-automobile-stateful-mock-driver",
+  "homepage": "https://github.com/zettajs/zetta-automobile-mock-driver",
   "dependencies": {
     "zetta-device": "^0.18.0"
   }
