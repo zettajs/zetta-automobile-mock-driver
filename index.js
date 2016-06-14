@@ -42,7 +42,8 @@ Automobile.prototype.init = function(config) {
 
 Automobile.prototype.makeReady = function(cb) {
   this.state = 'first';
-  this.vehicleSpeed = 1;
+  this.vehicleSpeed = 0;
+  this._vehicleSpeedCounter = 0;
   this._startMockData(cb);
   cb();
 }
@@ -50,6 +51,7 @@ Automobile.prototype.makeReady = function(cb) {
 Automobile.prototype.makeNotReady = function(cb) {
   this.state = 'park'
   this.vehicleSpeed = 0;
+  this._vehicleSpeedCounter = 0;
   this._stopMockData(cb);
   cb();
 }

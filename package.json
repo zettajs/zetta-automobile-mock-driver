@@ -1,6 +1,6 @@
 {
   "name": "zetta-automobile-mock-driver",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Mock automobile device for Zetta that generates a sine wave.",
   "main": "index.js",
   "scripts": {
