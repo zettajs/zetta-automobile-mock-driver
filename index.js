@@ -25,8 +25,8 @@ Automobile.prototype.init = function(config) {
   config
     .name(name)
     .type('automobile')
-    .state('not-ready')
-    .when('not-ready', {allow: ['make-ready']})
+    .state('park')
+    .when('park', {allow: ['make-ready']})
     .when('first', {allow: ['make-not-ready']})
     .when('second', {allow: ['make-not-ready']})
     .when('third', {allow: ['make-not-ready']})
@@ -42,12 +42,14 @@ Automobile.prototype.init = function(config) {
 
 Automobile.prototype.makeReady = function(cb) {
   this.state = 'first';
+  this.vehicleSpeed = 1;
   this._startMockData(cb);
   cb();
 }
 
 Automobile.prototype.makeNotReady = function(cb) {
-  this.state = 'not-ready'
+  this.state = 'park'
+  this.vehicleSpeed = 0;
   this._stopMockData(cb);
   cb();
 }
