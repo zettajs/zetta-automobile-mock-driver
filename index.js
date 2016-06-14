@@ -86,6 +86,6 @@ Automobile.prototype._stateFromVehicleSpeed = function(vehicleSpeed) {
   case 7:
     return 'seventh';
   case 8:
-    return 'eight';
+    return 'eighth';
   }
 }
