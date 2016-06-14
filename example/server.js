@@ -6,4 +6,5 @@ var increment = argv['i'];
 
 zetta()
   .use(Automobile, {increment: increment})
+  .link('http://dev.zettaapi.org')
   .listen(1337);
