@@ -2,6 +2,8 @@ var Device = require('zetta-device');
 var util = require('util');
 
 var TIMEOUT = 3000;
+var INTERVAL = 1000;
+
 function degToRad(x) {
   return x * ( Math.PI / 180 );
 }
@@ -94,7 +96,7 @@ Automobile.prototype._startMockData = function(cb) {
     self.longitude = self._slowsLongitude + self._lngDiff * self.acceleratorPedalPosition;
     self.odometer += self.vehicleSpeed / 3.6e+6;
     cb();
-  }, 100);
+  }, INTERVAL);
 }
 
 Automobile.prototype._stopMockData = function(cb) {
